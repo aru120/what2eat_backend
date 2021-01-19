@@ -5,12 +5,14 @@ class Api::HomeController < ApplicationController
 
         latitude = params[:latitude]
         longitude = params[:longitude]
-
+        offSet = params[:offSet]
+        term = params[:term]
+        
         response = RestClient::Request.execute(
             method: "GET",
-            url: "https://api.yelp.com/v3/businesses/search?latitude=#{latitude}&longitude=#{longitude}",  
-            headers: { Authorization: "Bearer #{ENV['YELP_KEY']}" }  
-            )    
+            url: "https://api.yelp.com/v3/businesses/search?latitude=#{latitude}&longitude=#{longitude}&offset=#{offSet}&term=#{term}",  
+            headers: { Authorization: "Bearer #{ENV['YELP_KEY']}" } , 
+        )
          results = JSON.parse(response)    
          render json: results  
     end
