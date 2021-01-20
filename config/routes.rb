@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :restaurant
     post '/home', to: 'home#index'
     post '/home/:id', to: 'home#search'
+    post '/random', to: 'random#index'
     post '/login', to: 'auth#create'
     get '/profile', to: 'user#profile'
 
