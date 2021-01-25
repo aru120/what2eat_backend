@@ -31,6 +31,19 @@ class Api::HomeController < ApplicationController
 
     end
 
+    def reviews
+        id = params[:id]
+        
+
+        response = RestClient::Request.execute(
+            method: "GET",
+            url: "https://api.yelp.com/v3/businesses/#{id}/reviews",  
+            headers: { Authorization: "Bearer #{ENV['YELP_KEY']}" }  
+            )    
+         results = JSON.parse(response)    
+         render json: results 
+    end
+
     # def randomFinder
     #     randomNumber = params[:randomNumber]
     #     latitude = params[:latitude]
