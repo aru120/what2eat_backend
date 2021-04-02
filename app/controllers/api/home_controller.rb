@@ -33,8 +33,7 @@ class Api::HomeController < ApplicationController
 
     def reviews
         id = params[:id]
-        
-
+    
         response = RestClient::Request.execute(
             method: "GET",
             url: "https://api.yelp.com/v3/businesses/#{id}/reviews",  

@@ -8,7 +8,7 @@ class Api::RandomController < ApplicationController
 
         response = RestClient::Request.execute(
             method: "GET",
-            url: "https://api.yelp.com/v3/businesses/search?latitude=#{latitude}&longitude=#{longitude}&offset=#{randomNumber}&limit=1",  
+            url: "https://api.yelp.com/v3/businesses/search?latitude=#{latitude}&longitude=#{longitude}&offset=#{randomNumber}&limit=1&category_filter=restaurants",  
             headers: { Authorization: "Bearer #{ENV['YELP_KEY']}" } , 
         )
          results = JSON.parse(response)    
