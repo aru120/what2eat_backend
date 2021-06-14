@@ -1,24 +1,21 @@
-# README
+# What2eat Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the backend for what2eat. It runs on Rails and PostgreSQL
 
-Things you may want to cover:
+To run it, you will need a YELP API key.
 
-* Ruby version
+--Adding YELP API key
+<br />
+Create .env file in the root directory and put the following in the file:
 
-* System dependencies
+YELP_KEY = "Your API KEY"
 
-* Configuration
+--
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run 'bundle install'
+<br />
+Run 'rails db:create'
+<br />
+Run 'rails db:migrate'
+<br />
+Run 'rails start'
