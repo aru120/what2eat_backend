@@ -12,7 +12,9 @@ YELP_KEY = "Your API KEY"
 --
 
 Run 'bundle install'
+<br />
 Run 'rails db:create'
+<br />
 Run 'rails db:migrate'
-
+<br />
 Run 'rails start'
